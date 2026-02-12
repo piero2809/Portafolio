@@ -1,85 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
+    <title>Piero Funes | Mi rincón en la web</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
-
-
 <body>
-    <header>
-        <h1>Portafolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="inicio">
-            <img src="https://i.kym-cdn.com/entries/icons/mobile/000/035/557/Hi_Bingus.jpg" alt="gato1">
-        </section>
 
-        <section id="habilidades">
-            <h2>Habilidades</h2>
-            <div class="habilidades-grid">
-                <div class="habilidad-card">
-                    <h3>PHP</h3>
-                    <p>descripcion de la habilidad 1</p>
+    <nav>
+        <div class="logo">PF</div> 
+        
+        <ul>
+            <li><a href="#proyectos">Proyectos</a></li>
+            
+            <li><a href="https://piero2809.github.io/CV-Html/" class="btn-cv">Ver CV</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero"> <!--Seccion de la portada Lo primero que aparece en pantalla-->
+        
+        <div class="hero-content" data-aos="fade-up"> <!--Animacion de que aparezca-->
+            
+            <h1>Hola, soy <span>Piero Funes</span></h1>
+            
+            <p>Estudiante de Desarrollo de aplicaciones web <br> -- Python -- MySQL -- HTML -- CSS -- JavaScript --</p>
+            
+            <div class="social-links">
+                <a href="#proyectos" class="btn-primary">Mira lo que he hecho</a> <!--Boton para que te lleve a la seccion de proyectos-->
+            </div>
+        </div>
+    </header>   
+
+    <section id="proyectos" class="projects"> <!--Seccion de los proyectos-->
+        
+        <h2 data-aos="fade-right">Mis Proyectos</h2>
+        
+        <div class="project-grid"> <!--Rejilla de los proyectos-->
+            
+            <div class="project-card" data-aos="zoom-in"> <!--Tarjeta de los proyectos-->
+                
+                <div class="project-image"> <!--Imagen de los proyectos-->
+                    <img src="img/resilio-preview.png" alt="Preview de Resilio">
                 </div>
-                <div class="habilidad-card">
-                    <h3>Python</h3>
-                    <p>descripcion de la habilidad 2</p>
-                </div>
-                <div class="habilidad-card">
-                    <h3>Bases de datos no relacionales (MySQL)</h3>
-                    <p>descripcion de la habilidad 3</p>
-                </div>
-                <div class="habilidad-card">
-                    <h3>HTML - CSS</h3>
-                    <p>descripcion de la habilidad 4</p>
+                
+                <div class="project-info"> <!--Informacion de los proyectos-->
+                    <h3>Resilio (Aún en desarrollo)</h3>
+                    <p>Mi app de psicología y neurociencia basada en el test de Maslach.</p>
+                    
+                    <span class="tech-stack">Python · Flask · MySQL</span>
                 </div>
             </div>
-        </section>
-
-        <section id="proyectos">
-            <h2>Proyectos</h2>
-            <div class="proyecto-card">
-                <h3>proyecto 1</h3>
-                <p>descripcion del proyecto 1</p>
+            
+            <div class="project-card" data-aos="zoom-in"> <!--Tarjeta de los proyectos-->
+                
+                <div class="project-image"> <!--Imagen de los proyectos-->
+                    <img src="img/resilio-preview.png" alt="Preview de Resilio">
+                </div>
+                
+                <div class="project-info"> <!--Informacion de los proyectos-->
+                    <h3>Retroplay</h3>
+                    <p>Mi app de psicología y neurociencia basada en el test de Maslach.</p>
+                    
+                    <span class="tech-stack">Python · Flask · MySQL</span>
+                </div>
             </div>
-        </section>
 
-        <section id="contacto" class="contacto-seccion">
-            <h2>Contacto</h2>
-            <div class="redes-sociales">
-                <a href="https://github.com/piero2809" target="_blank" class="boton-contacto">
-                    <span>GitHub</span>
-                </a>
-
-                <a href="https://www.linkedin.com/in/piero-funes-larios-44360a166/" target="_blank"
-                    class="boton-contacto">
-                    <span>LinkedIn</span>
-                </a>
-
-                <a href="mailto:pierofl2005@gmail.com" class="boton-contacto">
-                    <span>Email</span>
-                </a>
+            <div class="project-card" data-aos="zoom-in"> <!--Tarjeta de los proyectos-->
+                
+                <div class="project-image"> <!--Imagen de los proyectos-->
+                    <img src="img/resilio-preview.png" alt="Preview de Resilio">
+                </div>
+                
+                <div class="project-info"> <!--Informacion de los proyectos-->
+                    <h3>CRUD (Aún en desarrollo)</h3>
+                    <p>Mi app de psicología y neurociencia basada en el test de Maslach.</p>
+                    
+                    <span class="tech-stack">Python · Flask · MySQL</span>
+                </div>
             </div>
-        </section>
-    </main>
+            
+            </div>
+    </section>
+
     <footer>
-        <p>Portafolio 2025</p>
+        <p>&copy; 2026 Piero Funes - Hecho con ganas (y un poco de café)</p>
     </footer>
 
-
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        AOS.init({
+            duration: 1000, // // Duración: 1000ms = 1 segundo.
+            once: true      // // Once: true = La animación solo ocurre una vez (no repite al subir/bajar).
+        });
+    </script>
 </body>
-
 </html>
