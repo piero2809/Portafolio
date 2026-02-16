@@ -1,77 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piero Funes | Mi rincón en la web</title>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <nav>
-        <div class="logo">PF</div> 
-        
+        <div class="logo">PF</div>
+
         <ul>
             <li><a href="#proyectos">Proyectos</a></li>
-            
-            <li><a href="https://piero2809.github.io/CV-Html/" class="btn-cv">Ver CV</a></li>
+
+            <li><a href="https://piero2809.github.io/CV-Html/?origen=portafolio" class="btn-cv">Ver CV</a></li>
         </ul>
     </nav>
 
     <header class="hero"> <!--Seccion de la portada Lo primero que aparece en pantalla-->
-        
+
         <div class="hero-content" data-aos="fade-up"> <!--Animacion de que aparezca-->
-            
+
             <h1>Hola, soy <span>Piero Funes</span></h1>
-            
+
             <p>Estudiante de Desarrollo de aplicaciones web <br> -- Python -- MySQL -- HTML -- CSS -- JavaScript --</p>
-            
+
             <div class="social-links">
-                <a href="#proyectos" class="btn-primary">Mira lo que he hecho</a> <!--Boton para que te lleve a la seccion de proyectos-->
+                <a href="#proyectos" class="btn-primary">Mira lo que he hecho</a>
+                <!--Boton para que te lleve a la seccion de proyectos-->
             </div>
         </div>
-    </header>   
+    </header>
 
     <section id="proyectos" class="projects"> <!--Seccion de los proyectos-->
-        
+
         <h2 data-aos="fade-right">Mis Proyectos</h2>
-        
+
         <div class="project-grid"> <!--Rejilla de los proyectos-->
-            
+
             <div class="project-card" data-aos="zoom-in"> <!--Tarjeta de los proyectos-->
-                
+
                 <div class="project-image"> <!--Imagen de los proyectos-->
                     <img src="img/Resiliopanel.png" alt="Preview de Resilio">
                 </div>
-                
+
                 <div class="project-info"> <!--Informacion de los proyectos-->
                     <h3>Resilio (Aún en desarrollo)</h3>
                     <p>Mi app de psicología y neurociencia basada en el test de Maslach.</p>
-                    
+
                     <span class="tech-stack">Python · Flask · MySQL</span>
                 </div>
             </div>
-            
+
             <div class="project-card" data-aos="zoom-in"> <!--Tarjeta de los proyectos-->
-                
+
                 <div class="project-image"> <!--Imagen de los proyectos-->
                     <img src="img/Retroplay.png" alt="Preview de Retroplay">
                 </div>
-                
+
                 <div class="project-info"> <!--Informacion de los proyectos-->
                     <h3>Retroplay</h3>
                     <p>Tienda de alquiler de juegos y consolas retro.</p>
-                    
+
                     <span class="tech-stack">PHP · Html · Css · MySQL · JavaScript</span>
                 </div>
             </div>
-            
-            </div>
+
+        </div>
     </section>
 
     <footer>
@@ -79,7 +82,7 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <script>
         AOS.init({
             duration: 1000, // // Duración: 1000ms = 1 segundo.
@@ -87,4 +90,5 @@
         });
     </script>
 </body>
+
 </html>
