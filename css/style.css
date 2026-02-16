@@ -1,12 +1,12 @@
-/* Mis colores, para tenerlos a mano y no liarla */
+/* Mis colores */
 :root {
-    --primary-color: #2563eb; 
-    --dark-bg: #0f172a;       
+    --primary-color: #2563eb;
+    --dark-bg: #0f172a;
     --text-light: #f8fafc;
     --accent: #38bdf8;
 }
 
-/* ESTO ES NUEVO: Para que al darle al botón baje como la seda y no de golpe */
+/* Scroll suave */
 html {
     scroll-behavior: smooth;
 }
@@ -14,7 +14,7 @@ html {
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Fundamental para que los tamaños no se vuelvan locos */
+    box-sizing: border-box;
 }
 
 body {
@@ -22,18 +22,18 @@ body {
     background-color: var(--dark-bg);
     color: var(--text-light);
     line-height: 1.6;
-    overflow-x: hidden; /* Evito que salga el scroll horizontal por error */
+    overflow-x: hidden;
 }
 
-/* La barra de navegación flotando arriba */
+/* NAV */
 nav {
     display: flex;
     justify-content: space-between;
     padding: 2rem 10%;
     align-items: center;
-    position: absolute; 
+    position: absolute;
     width: 100%;
-    z-index: 10; /* Para que siempre esté por encima de todo */
+    z-index: 10;
 }
 
 nav ul {
@@ -48,7 +48,7 @@ nav a {
     transition: 0.3s;
 }
 
-/* El botón del CV con su retoque azul */
+/* Botón CV */
 .btn-cv {
     background: var(--primary-color);
     padding: 0.6rem 1.2rem;
@@ -60,9 +60,9 @@ nav a {
     transform: translateY(-2px);
 }
 
-/* Portada de la web (Hero Section) */
+/* HERO SECTION */
 .hero {
-    height: 100vh; 
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,7 +79,6 @@ nav a {
     color: var(--primary-color);
 }
 
-/* Botón principal con su efecto neón al pasar el ratón */
 .btn-primary {
     display: inline-block;
     margin-top: 2rem;
@@ -96,7 +95,111 @@ nav a {
     box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
 }
 
-/* La rejilla de los proyectos */
+/* ========================================= */
+/* SECCIÓN DE HABILIDADES (DEVICON)          */
+/* ========================================= */
+
+.skills-section {
+    padding: 5rem 10%;
+    text-align: center;
+}
+
+.skills-section h2 {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    text-align: left;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.skill-card {
+    background: #1e293b;
+    padding: 2.5rem 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estilos para la imagen del logo */
+.skill-card .icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-card .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Asegura que el logo se vea perfecto */
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* Efectos Hover */
+.skill-card:hover {
+    transform: translateY(-10px);
+    background: #162032;
+}
+
+.skill-card:hover .icon {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* Colores específicos por tecnología al hacer hover */
+.skill-card.python:hover {
+    border-color: #306998;
+    box-shadow: 0 0 25px rgba(48, 105, 152, 0.3);
+}
+
+.skill-card.mysql:hover {
+    border-color: #00758F;
+    box-shadow: 0 0 25px rgba(0, 117, 143, 0.3);
+}
+
+.skill-card.html:hover {
+    border-color: #E34F26;
+    box-shadow: 0 0 25px rgba(227, 79, 38, 0.3);
+}
+
+.skill-card.css:hover {
+    border-color: #1572B6;
+    box-shadow: 0 0 25px rgba(21, 114, 182, 0.3);
+}
+
+.skill-card.js:hover {
+    border-color: #F7DF1E;
+    box-shadow: 0 0 25px rgba(247, 223, 30, 0.3);
+}
+
+.skill-card.php:hover {
+    border-color: #777BB4;
+    box-shadow: 0 0 25px rgba(119, 123, 180, 0.3);
+}
+
+
+/* ========================================= */
+/* SECCIÓN PROYECTOS                         */
+/* ========================================= */
+
 .projects {
     padding: 5rem 10%;
 }
@@ -107,34 +210,31 @@ nav a {
     gap: 2rem;
 }
 
-/* ESTO ES NUEVO: Estilos para las fotos de los proyectos */
+.project-card {
+    background: #1e293b;
+    padding: 0;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+
 .project-image {
     width: 100%;
     height: 200px;
-    overflow: hidden; /* Corta lo que sobre del logo/foto */
+    overflow: hidden;
     border-radius: 10px 10px 0 0;
-    margin-bottom: 15px;
-    background: #0f172a; /* Fondo por si la imagen tarda en cargar */
+    margin-bottom: 0;
+    background: #0f172a;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la foto sin estirarla feo */
-    transition: 0.5s ease; /* Para que el zoom sea suave */
+    object-fit: cover;
+    transition: 0.5s ease;
 }
 
-/* Las tarjetas de los proyectos */
-.project-card {
-    background: #1e293b;
-    padding: 0; /* Quito padding para que la imagen llegue al borde */
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.3s ease;
-    overflow: hidden;
-}
-
-/* El texto de dentro de la tarjeta necesita su propio padding ahora */
 .project-info {
     padding: 1.5rem;
 }
@@ -144,7 +244,6 @@ nav a {
     border-color: var(--primary-color);
 }
 
-/* Efecto de zoom en la foto al pasar por la tarjeta */
 .project-card:hover .project-image img {
     transform: scale(1.1);
 }
@@ -161,4 +260,360 @@ footer {
     text-align: center;
     padding: 3rem;
     opacity: 0.6;
+}
+
+/* ========================================= */
+/* ESTILOS DEL MODAL (VENTANA EMERGENTE)     */
+/* ========================================= */
+
+.modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #1e293b;
+    margin: auto;
+    padding: 0;
+    border: 1px solid var(--primary-color);
+    width: 90%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.close-btn {
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 100;
+    line-height: 1;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--primary-color);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-img-container {
+    flex: 1;
+    height: auto;
+    min-height: 300px;
+}
+
+.modal-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-text {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-text h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.modal-text p {
+    margin-top: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+/* Ajuste móvil para el Modal */
+@media (max-width: 768px) {
+    .modal-body {
+        flex-direction: column;
+    }
+
+    .modal-img-container {
+        height: 200px;
+        min-height: 200px;
+    }
+
+    .modal-text {
+        padding: 20px;
+    }
+
+    .modal-text h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========================================= */
+/* SECCIÓN CONTACTO                          */
+/* ========================================= */
+
+.contact-section {
+    padding: 5rem 10%;
+    text-align: center;
+    background-color: #111827;
+    /* Un tono ligeramente diferente para separar visualmente */
+}
+
+.contact-section h2 {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    text-align: left;
+}
+
+.contact-grid {
+    display: grid;
+    /* Columnas automáticas que se adaptan (mínimo 250px) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* Tarjeta de contacto (que funciona como enlace) */
+.contact-card {
+    background: #1e293b;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    text-decoration: none;
+    /* Quitamos el subrayado del enlace */
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Icono SVG dentro de la tarjeta */
+.contact-card .icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact-card .icon svg {
+    width: 100%;
+    height: 100%;
+    /* Los colores ya vienen definidos en el SVG del HTML (fill) */
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-card p {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    /* Texto un poco más gris */
+    margin: 0;
+}
+
+/* --- EFECTOS HOVER --- */
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    /* Flota hacia arriba */
+    background: #162032;
+    border-color: var(--primary-color);
+    /* Borde azul al pasar el ratón */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card:hover .icon {
+    transform: scale(1.2);
+    /* El icono crece */
+}
+
+.contact-card:hover h3 {
+    color: var(--primary-color);
+    /* El título se pone azul */
+}
+
+
+/* ========================================= */
+/* NAV (Navegación Responsive)               */
+/* ========================================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 10%; /* Un poco menos de padding vertical */
+    align-items: center;
+    position: fixed; /* Fijo para que te siga al bajar */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Muy alto para estar encima de todo */
+    background: rgba(15, 23, 42, 0.9); /* Fondo semitransparente para que se lea bien */
+    backdrop-filter: blur(10px); /* Efecto borroso pro */
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Estilo del botón "Ver CV" */
+.btn-cv {
+    background: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: white !important; /* Forzamos blanco */
+}
+
+.btn-cv:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* --- MENÚ HAMBURGUESA (El icono) --- */
+.hamburger {
+    display: none; /* Oculto en PC */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-light);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* --- VERSIÓN MÓVIL (Media Query con Animación) --- */
+@media (max-width: 768px) {
+    /* Ajustamos el padding del nav para móvil */
+    nav {
+        padding: 1rem 5%;
+    }
+
+    /* Mostramos el icono hamburguesa */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-light);
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+
+    /* MENÚ DESPLEGABLE CON ANIMACIÓN */
+    nav ul {
+        position: absolute;
+        top: 100%; /* Justo debajo de la barra */
+        left: 0;
+        width: 100%;
+        background-color: #0f172a; /* Color de fondo sólido */
+        flex-direction: column; /* Vertical */
+        padding: 0; /* Empezamos sin padding */
+        gap: 0; /* Empezamos sin gap */
+        
+        /* Oculto por defecto (altura 0) */
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden; /* Esconde lo que sobra mientras está cerrado */
+        transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, padding 0.4s ease;
+        border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* CLASE ACTIVE (Cuando el menú se abre) */
+    nav ul.active {
+        /* Le damos altura suficiente para que quepa todo */
+        max-height: 400px; /* Ajusta este valor si tienes muchos enlaces */
+        opacity: 1;
+        padding: 2rem 0; /* Ahora sí ponemos padding */
+        gap: 1.5rem; /* Y espacio entre enlaces */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+    
+    /* Hacemos los enlaces más grandes en móvil */
+    nav a {
+        font-size: 1.2rem;
+        display: block;
+        padding: 0.5rem 0; /* Zona de clic más grande */
+    }
+
+    /* ANIMACIÓN DEL ICONO HAMBURGUESA (Opcional pero queda brutal) */
+    /* Cuando está activo, las barras giran y forman una X */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0; /* La del medio desaparece */
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
