@@ -1,9 +1,14 @@
 /* Mis colores */
 :root {
-    --primary-color: #2563eb;
-    --dark-bg: #0f172a;
-    --text-light: #f8fafc;
-    --accent: #38bdf8;
+    --primary-color: #5cb79a;
+    --dark-bg: #000000;
+    --dark-surface: #0a0a0a;
+    --dark-border: #1a1a1a;
+    --text-light: #e5e5e5;
+    --accent: #7aecc3;
+
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
 }
 
 /* Scroll suave */
@@ -18,7 +23,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sans);
     background-color: var(--dark-bg);
     color: var(--text-light);
     line-height: 1.6;
@@ -52,7 +57,8 @@ nav a {
 .btn-cv {
     background: var(--primary-color);
     padding: 0.6rem 1.2rem;
-    border-radius: 8px;
+    border-radius: 4px; /* More minimalist */
+    font-family: var(--font-mono);
 }
 
 .btn-cv:hover {
@@ -67,7 +73,7 @@ nav a {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    background: var(--dark-bg);
 }
 
 .hero h1 {
@@ -77,6 +83,7 @@ nav a {
 
 .hero h1 span {
     color: var(--primary-color);
+    font-family: var(--font-mono);
 }
 
 .btn-primary {
@@ -86,13 +93,16 @@ nav a {
     border: 2px solid var(--primary-color);
     color: var(--text-light);
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 8px; /* Flat minimalist, removed pill shape */
     transition: 0.4s;
+    font-family: var(--font-mono); /* Added monospace accent */
+    font-size: 0.9rem;
 }
 
 .btn-primary:hover {
     background: var(--primary-color);
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+    box-shadow: none;
+    color: #000;
 }
 
 /* ========================================= */
@@ -108,6 +118,7 @@ nav a {
     margin-bottom: 3rem;
     font-size: 2.5rem;
     text-align: left;
+    font-family: var(--font-mono);
 }
 
 .skills-grid {
@@ -118,10 +129,10 @@ nav a {
 }
 
 .skill-card {
-    background: #1e293b;
+    background: var(--dark-surface);
     padding: 2.5rem 1.5rem;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    border: 1px solid var(--dark-border);
     text-align: center;
     transition: all 0.3s ease;
     cursor: default;
@@ -156,44 +167,16 @@ nav a {
 
 /* Efectos Hover */
 .skill-card:hover {
-    transform: translateY(-10px);
-    background: #162032;
+    transform: translateY(-5px);
+    background: var(--dark-bg);
+    border-color: var(--primary-color);
 }
 
 .skill-card:hover .icon {
-    transform: scale(1.15) rotate(5deg);
+    transform: scale(1.1);
 }
 
-/* Colores específicos por tecnología al hacer hover */
-.skill-card.python:hover {
-    border-color: #306998;
-    box-shadow: 0 0 25px rgba(48, 105, 152, 0.3);
-}
-
-.skill-card.mysql:hover {
-    border-color: #00758F;
-    box-shadow: 0 0 25px rgba(0, 117, 143, 0.3);
-}
-
-.skill-card.html:hover {
-    border-color: #E34F26;
-    box-shadow: 0 0 25px rgba(227, 79, 38, 0.3);
-}
-
-.skill-card.css:hover {
-    border-color: #1572B6;
-    box-shadow: 0 0 25px rgba(21, 114, 182, 0.3);
-}
-
-.skill-card.js:hover {
-    border-color: #F7DF1E;
-    box-shadow: 0 0 25px rgba(247, 223, 30, 0.3);
-}
-
-.skill-card.php:hover {
-    border-color: #777BB4;
-    box-shadow: 0 0 25px rgba(119, 123, 180, 0.3);
-}
+/* Colores específicos por tecnología al hacer hover (Removed specific colors for uniform brand color) */
 
 
 /* ========================================= */
@@ -204,6 +187,13 @@ nav a {
     padding: 5rem 10%;
 }
 
+.projects h2 {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    text-align: left;
+    font-family: var(--font-mono);
+}
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -211,10 +201,10 @@ nav a {
 }
 
 .project-card {
-    background: #1e293b;
+    background: var(--dark-surface);
     padding: 0;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    border: 1px solid var(--dark-border);
     transition: 0.3s ease;
     overflow: hidden;
 }
@@ -223,9 +213,9 @@ nav a {
     width: 100%;
     height: 200px;
     overflow: hidden;
-    border-radius: 10px 10px 0 0;
+    border-radius: 4px 4px 0 0;
     margin-bottom: 0;
-    background: #0f172a;
+    background: var(--dark-bg);
 }
 
 .project-image img {
@@ -240,7 +230,7 @@ nav a {
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     border-color: var(--primary-color);
 }
 
@@ -253,13 +243,15 @@ nav a {
     margin-top: 1rem;
     font-size: 0.8rem;
     color: var(--accent);
-    font-weight: bold;
+    font-family: var(--font-mono);
 }
 
 footer {
     text-align: center;
     padding: 3rem;
     opacity: 0.6;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
 }
 
 /* ========================================= */
@@ -288,14 +280,14 @@ footer {
 }
 
 .modal-content {
-    background-color: #1e293b;
+    background-color: var(--dark-surface);
     margin: auto;
     padding: 0;
     border: 1px solid var(--primary-color);
     width: 90%;
     max-width: 800px;
-    border-radius: 15px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
     position: relative;
     transform: scale(0.8);
     transition: transform 0.3s ease;
@@ -355,6 +347,7 @@ footer {
     margin-bottom: 10px;
     font-size: 2rem;
     line-height: 1.2;
+    font-family: var(--font-mono);
 }
 
 .modal-text p {
@@ -391,14 +384,14 @@ footer {
 .contact-section {
     padding: 5rem 10%;
     text-align: center;
-    background-color: #111827;
-    /* Un tono ligeramente diferente para separar visualmente */
+    background-color: var(--dark-bg);
 }
 
 .contact-section h2 {
     margin-bottom: 3rem;
     font-size: 2.5rem;
     text-align: left;
+    font-family: var(--font-mono);
 }
 
 .contact-grid {
@@ -411,10 +404,10 @@ footer {
 
 /* Tarjeta de contacto (que funciona como enlace) */
 .contact-card {
-    background: #1e293b;
+    background: var(--dark-surface);
     padding: 2.5rem 2rem;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    border: 1px solid var(--dark-border);
     text-align: center;
     text-decoration: none;
     /* Quitamos el subrayado del enlace */
@@ -456,12 +449,12 @@ footer {
 /* --- EFECTOS HOVER --- */
 
 .contact-card:hover {
-    transform: translateY(-10px);
-    /* Flota hacia arriba */
-    background: #162032;
+    transform: translateY(-5px);
+    /* Flota hacia arriba sutilmente */
+    background: var(--dark-bg);
     border-color: var(--primary-color);
-    /* Borde azul al pasar el ratón */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* Borde verde al pasar el ratón */
+    box-shadow: none;
 }
 
 .contact-card:hover .icon {
@@ -487,9 +480,9 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1000; /* Muy alto para estar encima de todo */
-    background: rgba(15, 23, 42, 0.9); /* Fondo semitransparente para que se lea bien */
+    background: rgba(0, 0, 0, 0.8); /* Fondo negro semitransparente */
     backdrop-filter: blur(10px); /* Efecto borroso pro */
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid var(--dark-border);
 }
 
 .logo {
@@ -497,6 +490,7 @@ nav {
     font-size: 1.5rem;
     color: var(--text-light);
     letter-spacing: 1px;
+    font-family: var(--font-mono);
 }
 
 nav ul {
@@ -510,7 +504,8 @@ nav a {
     text-decoration: none;
     color: var(--text-light);
     transition: 0.3s;
-    font-size: 0.95rem;
+    font-size: 0.90rem;
+    font-family: var(--font-mono);
 }
 
 nav a:hover {
@@ -521,8 +516,10 @@ nav a:hover {
 .btn-cv {
     background: var(--primary-color);
     padding: 0.5rem 1rem;
-    border-radius: 8px;
-    color: white !important; /* Forzamos blanco */
+    border-radius: 4px; /* More minimalist */
+    color: #000 !important; /* Black text on green button */
+    font-family: var(--font-mono);
+    font-weight: 700;
 }
 
 .btn-cv:hover {
@@ -575,7 +572,7 @@ nav a:hover {
         top: 100%; /* Justo debajo de la barra */
         left: 0;
         width: 100%;
-        background-color: #0f172a; /* Color de fondo sólido */
+        background-color: var(--dark-bg);
         flex-direction: column; /* Vertical */
         padding: 0; /* Empezamos sin padding */
         gap: 0; /* Empezamos sin gap */
@@ -595,7 +592,7 @@ nav a:hover {
         opacity: 1;
         padding: 2rem 0; /* Ahora sí ponemos padding */
         gap: 1.5rem; /* Y espacio entre enlaces */
-        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.8);
     }
     
     /* Hacemos los enlaces más grandes en móvil */
