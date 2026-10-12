@@ -1,2 +1,5 @@
 # Portafolio
-here i will put all my work done in class and all my projects 
+
+Este repositorio contiene una colección de mis trabajos realizados en clase y mis proyectos personales.
+
+Enlace al repositorio: [https://github.com/piero2809/Portafolio](https://github.com/piero2809/Portafolio)
