@@ -18,13 +18,13 @@
     <nav>
         <div class="logo">PF</div>
 
-        <div class="hamburger" onclick="toggleMenu()">
+        <button class="hamburger" onclick="toggleMenu()" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
-        </div>
+        </button>
 
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
             <li><a href="#habilidades" onclick="toggleMenu()">Habilidades</a></li>
             <li><a href="#proyectos" onclick="toggleMenu()">Proyectos</a></li>
             <li><a href="#contacto" onclick="toggleMenu()">Contacto</a></li>
@@ -103,7 +103,7 @@
 
         <div class="project-grid">
 
-            <div class="project-card" data-aos="zoom-in" onclick="verProyecto('resilio')" style="cursor: pointer;">
+            <div class="project-card" data-aos="zoom-in" onclick="verProyecto('resilio')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();verProyecto('resilio');}" role="button" tabindex="0" aria-label="Ver detalles del proyecto Resilio" style="cursor: pointer;">
                 <div class="project-image">
                     <img src="img/Resiliopanel.png" alt="Preview de Resilio">
                 </div>
@@ -114,7 +114,7 @@
                 </div>
             </div>
 
-            <div class="project-card" data-aos="zoom-in" onclick="verProyecto('retroplay')" style="cursor: pointer;">
+            <div class="project-card" data-aos="zoom-in" onclick="verProyecto('retroplay')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();verProyecto('retroplay');}" role="button" tabindex="0" aria-label="Ver detalles del proyecto Retroplay" style="cursor: pointer;">
                 <div class="project-image">
                     <img src="img/Retroplay.png" alt="Preview de Retroplay">
                 </div>
@@ -173,9 +173,9 @@
         <p>&copy; 2026 Piero Funes - Hecho con ganas (y un poco de café)</p>
     </footer>
 
-    <div id="modal-proyecto" class="modal">
+    <div id="modal-proyecto" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
         <div class="modal-content">
-            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <button class="close-btn" onclick="cerrarModal()" aria-label="Cerrar">&times;</button>
             <div class="modal-body">
                 <div class="modal-img-container">
                     <img id="modal-img" src="" alt="Detalle Proyecto">
@@ -228,16 +228,23 @@
                 document.getElementById('modal-link').href = data.link;
 
                 const modal = document.getElementById('modal-proyecto');
+                lastFocused = document.activeElement;
                 modal.style.display = 'flex';
                 // Pequeño retardo para que la animación CSS funcione
-                setTimeout(() => modal.classList.add('active'), 10);
+                setTimeout(() => {
+                    modal.classList.add('active');
+                    document.querySelector('.close-btn').focus();
+                }, 10);
             }
         }
+
+        let lastFocused = null;
 
         function cerrarModal() {
             const modal = document.getElementById('modal-proyecto');
             modal.classList.remove('active');
             setTimeout(() => modal.style.display = 'none', 300);
+            if (lastFocused) lastFocused.focus();
         }
 
         // Cerrar si se hace click fuera de la tarjeta
@@ -247,16 +254,28 @@
                 cerrarModal();
             }
         }
+
+        // Cerrar con Escape
+        document.addEventListener('keydown', function (event) {
+            const modal = document.getElementById('modal-proyecto');
+            if (event.key === 'Escape' && modal.classList.contains('active')) {
+                cerrarModal();
+            }
+        });
+
         // --- FUNCIÓN MENÚ HAMBURGUESA ANIMADO ---
         function toggleMenu() {
             const navList = document.querySelector('nav ul');
             const hamburger = document.querySelector('.hamburger');
 
             // Añade o quita la clase "active" a la lista (para desplegar)
-            navList.classList.toggle('active');
+            const isOpen = navList.classList.toggle('active');
 
             // Añade o quita la clase "active" al botón (para convertir las rayas en una X)
             hamburger.classList.toggle('active');
+
+            hamburger.setAttribute('aria-expanded', isOpen);
+            hamburger.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
         }
     </script>
 </body>
